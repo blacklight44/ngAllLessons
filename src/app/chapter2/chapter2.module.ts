@@ -7,6 +7,6 @@ import { Chapter2HomeComponent } from './chapter2-home/chapter2-home.component';
 @NgModule({
   declarations: [Chapter2HomeComponent],
   imports: [CommonModule, Chapter2RoutingModule],
-  exports: [Chapter2HomeComponent],
+  //exports: [Chapter2HomeComponent],
 })
 export class Chapter2Module {}

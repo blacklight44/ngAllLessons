@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Chapter4HomeComponent } from './chapter4-home/chapter4-home.component'; //module içi route
 
-const routes: Routes = [];
+const routes: Routes = [{ path: 'chapter4', component: Chapter4HomeComponent }]; //path belirleme
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class Chapter4RoutingModule { }
+export class Chapter4RoutingModule {}
