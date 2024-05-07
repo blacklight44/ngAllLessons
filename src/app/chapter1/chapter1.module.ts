@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Chapter1RoutingModule } from './chapter1-routing.module';
+import { Chapter1HomeComponent } from './chapter1-home/chapter1-home.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    Chapter1HomeComponent
+  ],
   imports: [
     CommonModule,
     Chapter1RoutingModule
