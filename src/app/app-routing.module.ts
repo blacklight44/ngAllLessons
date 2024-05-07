@@ -4,6 +4,32 @@ import { HomeComponent } from './home/home.component'; //module içi route
 import { NotFoundComponent } from './not-found/not-found.component'; //module içi route
 
 const routes: Routes = [
+  //transform from eagerloading to lazy loading
+  {
+    path: 'chapter1',
+    loadChildren: () =>
+      import('./chapter1/chapter1.module').then((m) => m.Chapter1Module),
+  },
+  {
+    path: 'chapter2',
+    loadChildren: () =>
+      import('./chapter2/chapter2.module').then((m) => m.Chapter2Module),
+  },
+  {
+    path: 'chapter3',
+    loadChildren: () =>
+      import('./chapter3/chapter3.module').then((m) => m.Chapter3Module),
+  },
+  {
+    path: 'chapter4',
+    loadChildren: () =>
+      import('./chapter4/chapter4.module').then((m) => m.Chapter4Module),
+  },
+  {
+    path: 'chapter5',
+    loadChildren: () =>
+      import('./chapter5/chapter5.module').then((m) => m.Chapter5Module),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }, //hiç bir pathle eşleşmiyorsa
 ];
