@@ -1,1 +1,46 @@
-<p>chapter5-home works!</p>
+<div class="container">
+  <nav>
+    <ul class="pagination paginationUl">
+      <li class="page-item" [ngClass]="{ disabled: currentPage === 0 }">
+        <a (click)="currentPage = currentPage - 1" class="page-link">Önceki</a>
+      </li>
+      <ng-container *ngFor="let image of images; let i = index">
+        <li
+          class="page-item"
+          [ngClass]="{ active: i === currentPage }"
+          *ngIf="PageIndex(i)"
+        >
+          <a (click)="currentPage = i" class="page-link">{{ i + 1 }}</a>
+        </li>
+      </ng-container>
+
+      <li
+        class="page-item"
+        [ngClass]="{ disabled: currentPage === images.length - 1 }"
+      >
+        <a (click)="currentPage = currentPage + 1" class="page-link">Sonraki</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="mainImg">
+    <h4 appFirst [backgroundColor]="'blue'" style="color: white">
+      {{ images[currentPage].title }}
+    </h4>
+    <img class="Img" [src]="images[currentPage].url" />
+  </div>
+  <!-- <div [ngSwitch]="currentPage">
+    <div *ngSwitchCase="0">
+        İlk sayfadasın
+    </div>
+    <div *ngSwitchCase="1">
+      İkinci sayfadasın
+    </div>
+    <div *ngSwitchCase="2">
+    Üçüncü sayfadasın
+    </div>
+    <div *ngSwitchDefault>
+     İlk İkinci veya üçüncü sayfada değilsin
+    </div>
+  </div> -->
+</div>
