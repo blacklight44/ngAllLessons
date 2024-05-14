@@ -145,8 +145,5 @@ export class Chapter5HomeComponent implements OnInit {
     return Math.abs(this.currentPage - index) < 5;
   }
 
-  //  changePage(number : number)
-  //  {
-  //    this.currentPage =number;
-  //  }
+  //  changePage(number : number){   this.currentPage =number;}
 }

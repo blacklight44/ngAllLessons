@@ -9,6 +9,7 @@
   </app-card>
   <img src="./biking.jpeg" />
   <div (click)="tik()">tık</div>
+
   <!-- <app-card
   [title]="posts[0].title"
   [imageUrl]="posts[0].imageUrl"
@@ -27,4 +28,26 @@
   [username]="posts[2].username"
   [content]="posts[2].content"
  ></app-card> -->
+</div>
+<div>
+  <h1 style="color: brown">home.component.html</h1>
+  <p>app-card *ngFor="let post of posts"</p>
+  <p>[title]="post.title"</p>
+  <p>[imageUrl]="post.imageUrl"</p>
+  <p>[username]="post.username"</p>
+  <p>[content]="post.content"</p>
+</div>
+<div>
+  <h1 style="color: brown">card.component.ts</h1>
+  <p>import Component, OnInit, Input from '@angular/core';</p>
+  <p>@Input() title: string = '';</p>
+  <p>@Input() imageUrl: string = '';</p>
+  <p>@Input() username: string = '';</p>
+  <p>@Input() content: string = '';</p>
+  <p></p>
+</div>
+<div>
+  <h1 style="color: brown">card.component.html</h1>
+  <p>img [src]="imageUrl"</p>
+  <p>diğerleri interpolition</p>
 </div>

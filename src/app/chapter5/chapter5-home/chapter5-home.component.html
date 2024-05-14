@@ -44,3 +44,56 @@
     </div>
   </div> -->
 </div>
+<div style="display: flex; justify-content: space-between">
+  <div>
+    <p>*ngFor="let image of images; let i = index"</p>
+    <p>
+      [ngClass]="active: i === currentPage " component.ts de currentPage = 0;
+    </p>
+    <p>[ngClass]=" i === currentPage?'active':'passive' "</p>
+    <p>
+      [ngClass]="disabled: currentPage === images.length - 1 " ngClass ile
+      disabled
+    </p>
+    <p>
+      (click)="currentPage = i" class="page-link"> i + 1 : ilgili link
+      tıklandığında bu linke ait index currentPage değişkenine atanacak
+    </p>
+    <p>
+      uzun yolu : (click)="currentPage = changePage(i)" ve .ts de
+      changePage(number : number) this.currentPage =number;
+    </p>
+    <p>[src]="images[currentPage].url" indexe göre image basma</p>
+    <p>
+      *ngIf="PageIndex(i)" ile indexler methoda atanır ts de aktif sayfanın 4
+      sağ soluna kadar sıralanması icin method olusturulur
+    </p>
+    <p>
+      PageIndex(index: number) return Math.abs(this.currentPage - index) < 5;
+    </p>
+  </div>
+  <div>
+    <h1>CUSTOM DİRECTİVE OLUŞTURMA</h1>
+    <p>ng generate directive [name(first)]</p>
+    <p>ng generate directive [name]</p>
+    <p>
+      first.directive.ts te selector: '[appFirst]' oldugundan .html içerisinde
+      appFirst ile erisiyoruz
+    </p>
+    <p>first.directive.ts te ElementRef i implemente ediyoruz</p>
+    <p>directive i tanımladığınımız elementi obje olarak kullanabilmek için</p>
+    <p>constructor(private element:ElementRef) elementi alırız</p>
+    <p>
+      this.element.nativeElement.style.backgroundColor = color; ve istenilen
+      işlem yapılır
+    </p>
+    <p>
+      [backgroundColor]="'blue'" ile .html den first.directive.ts e color
+      gönderilir
+    </p>
+    <p>
+      first.directive.ts te ise bu alınıp işlenir : @Input() set
+      backgroundColor(color :string)
+    </p>
+  </div>
+</div>

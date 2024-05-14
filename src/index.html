@@ -1,13 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>NgAllLessons</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>NgAllLessons</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <app-root></app-root>
+    <div class="container" style="display: flex; justify-content: space-around">
+      <div>
+        <p>--npm install -g @angular/cli@13</p>
+        <p>--ng new [name]</p>
+        <p>--ng serve</p>
+        <p>--ng g m [name] --routing</p>
+        <p>
+          --ng g c [modulname]/[name] or ng generate component home
+          --inline-template --skip-tests
+        </p>
+        <p>npm i bootstrap or bulma</p>
+        <p>
+          style.css de ya da *.component.css de @import "bulma/css/bulma.css";
+        </p>
+        <h1 style="color: brown">chapter2.module.ts içi</h1>
+        <p>
+          import { Chapter2HomeComponent } from
+          './chapter2-home/chapter2-home.component';
+        </p>
+
+        <p>
+          import { CardComponent } from './card/card.component'
+          <span style="color: chocolate"
+            >olusturulan her extra component için
+          </span>
+        </p>
+        <p>declarations: [Chapter2HomeComponent, CardComponent],</p>
+        <div background-color="green">
+          <h1 style="color: rgb(239, 14, 14)">Eager loading için</h1>
+          <p>exports: [Chapter2HomeComponent],chapter2.module.ts içi</p>
+          <p>
+            imports: [ BrowserModule, // Chapter2Module, AppRoutingModule, ],
+            app-routing.module içi
+          </p>
+          <p>
+            bu şekilde app-card ı direk app.component.html de kullanabiliriz
+            fakat bu yöntem tüm modulleri aynı anda yüklediğinden yavaşlamaya
+            sebep olacağı için lazy loading için routingi kullanıyoruz bunda ise
+            her child component ancak kendi modulunde kullanılıp modul dışarı
+            açılıyor
+          </p>
+        </div>
+        <h1 style="color: brown">chapter2.routing.module.ts içi</h1>
+
+        <p>
+          import { Chapter2HomeComponent } from
+          './chapter2-home/chapter2-home.component'; //module içi route
+        </p>
+        <p>
+          const routes: Routes = [{ path: '', component: Chapter2HomeComponent
+          }]; //path belirleme
+        </p>
+        <h1 style="color: brown">app-routing.module içi</h1>
+        <p>
+          { path: 'chapter2', loadChildren: () =>
+          import('./chapter2/chapter2.module').then((m) => m.Chapter2Module), },
+        </p>
+        <h1 style="color: brown">app.component.html içi</h1>
+        <p>a class="button" routerLink="/chapter2">chapter2</p>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,4 +1,4 @@
-import { ConvertPipe } from '../convert.pipe';
+import { ConvertPipe } from './convert.pipe';
 
 describe('ConvertPipe', () => {
   it('create an instance', () => {
