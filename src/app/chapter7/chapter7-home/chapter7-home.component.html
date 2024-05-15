@@ -1,0 +1,52 @@
+<div class="mainBody"><app-cardform></app-cardform></div>
+<p>https://ultimatecourses.com/blog/angular-2-forms-reactive</p>
+<p>modul.ts te ReactiveFormsModule import edilir</p>
+<p>
+  homecomponenti olusturup chapter7 de ve app componentte rout ve child rout
+  ayarlayıp app.htmlde link veriyoruz
+</p>
+<p>cardform ve input componentleri olusturulur</p>
+<p>cardform selectörü home.html ye geçilir</p>
+
+<p>FormGroup, FormControl, Validators cardform.ts e import edilir</p>
+<p>
+  cardform.ts te FormGroup oluşturulup FormControl elemanları ve validasyon
+  kuralları tanımlanır
+</p>
+<p>[formGroup]="cardForm" ile form oluşturulur</p>
+<p>
+  label="Ad Soyad" [control]="cardForm.get('name')" ile inputa gönderilmek üzere
+  veriler tanımlanır
+</p>
+<p>
+  input.ts te @Input() control! : FormControl; @Input() label! : string olarak
+  karşılanıp(input ve formControl import edilir)
+</p>
+<p>
+  [formControl]="control" şeklinde input.html de alınır ve
+  formControlName="name"(cardform.ts te tanımlasak geçerli olacak olan ) yerine
+  geçer. label ise interpolution ile labela geçilir
+</p>
+<p>
+  [ngClass]= 'is-danger': showErrors() ile hata olması durumunda inputun danger
+  clası alması sağlanır ve
+</p>
+<p>
+  *ngIf="showErrors()" methodu ile hata olması durumunda hataların gösterilmesi
+  için ng container olusturulur [ return this.control.dirty &&
+  this.control.touched && this.control.errors;] angular abstract controllers
+</p>
+<p>
+  control.errors?.['minlength']?.['actualLength'] şeklinde hata mesajları
+  dinamik olarak gösterilir
+</p>
+<p>
+  Kaydet butonu oluşturulup formda (ngSubmit)="onSubmit()" geçilir ve onSubmit
+  tanımlanır bunu direk butona click eventi ile de ekleyebilirdik
+  [disabled]="cardForm.invalid" ile valid olmazsa disable edebiliriz
+</p>
+<p>temizle butonu (click)="ResetForm()" ile oluşturulur</p>
+<p>
+  son kullanım tarihi için özel formcontrol clası DateFormControl extends
+  FormControl şeklinde override setValue ile oluşturulur
+</p>

@@ -30,6 +30,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./chapter5/chapter5.module').then((m) => m.Chapter5Module),
   },
+  {
+    path: 'chapter7',
+    loadChildren: () =>
+      import('./chapter7/chapter7.module').then((m) => m.Chapter7Module),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }, //hiç bir pathle eşleşmiyorsa
 ];
