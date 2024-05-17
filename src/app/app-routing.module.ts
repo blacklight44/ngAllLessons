@@ -40,6 +40,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./chapter9/chapter9.module').then((m) => m.Chapter9Module),
   },
+  {
+    path: 'photoapp',
+    loadChildren: () =>
+      import('./photoapp/photoapp.module').then((m) => m.PhotoappModule),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }, //hiç bir pathle eşleşmiyorsa
 ];

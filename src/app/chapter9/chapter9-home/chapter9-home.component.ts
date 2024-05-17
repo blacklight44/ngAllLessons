@@ -1,40 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  Observable,
-  Subscriber,
-  of,
-  from,
-  fromEvent,
-  timer,
-  interval,
-  forkJoin,
-  merge,
-  concat,
-  combineLatest,
-  Subject,
-  BehaviorSubject,
-  AsyncSubject,
-  ReplaySubject,
-} from 'rxjs';
-import { ajax } from 'rxjs/ajax';
-import {
-  mapTo,
-  filter,
-  map,
-  tap,
-  debounceTime,
-  skip,
-  skipWhile,
-  take,
-  takeLast,
-  takeWhile,
-  first,
-  last,
-  distinct,
-  concatMap,
-  startWith,
-  endWith,
-} from 'rxjs/operators';
+// import {
+//   Observable,
+//   Subscriber,
+//   of,
+//   from,
+//   fromEvent,
+//   timer,
+//   interval,
+//   forkJoin,
+//   merge,
+//   concat,
+//   combineLatest,
+//   Subject,
+//   BehaviorSubject,
+//   AsyncSubject,
+//   ReplaySubject,
+// } from 'rxjs';
+// import { ajax } from 'rxjs/ajax';
+// import {
+//   mapTo,
+//   filter,
+//   map,
+//   tap,
+//   debounceTime,
+//   skip,
+//   skipWhile,
+//   take,
+//   takeLast,
+//   takeWhile,
+//   first,
+//   last,
+//   distinct,
+//   concatMap,
+//   startWith,
+//   endWith,
+// } from 'rxjs/operators';
 import '@angular/compiler';
 @Component({
   selector: 'app-chapter9-home',
@@ -676,15 +676,15 @@ export class Chapter9HomeComponent implements OnInit {
 
 //*******************************************41-Replay Subject
 //Kendisinden önce kaç değer emit edilmek isteniyorsa belirtilir
-const sub = new ReplaySubject(3);
+// const sub = new ReplaySubject(3);
 
-sub.next(1);
-sub.next(2);
-sub.subscribe(console.log); //1,2,3,4,5
-sub.next(3);
-sub.next(4);
-sub.subscribe(console.log); //2,3,4,5
-sub.next(5);
+// sub.next(1);
+// sub.next(2);
+// sub.subscribe(console.log); //1,2,3,4,5
+// sub.next(3);
+// sub.next(4);
+// sub.subscribe(console.log); //2,3,4,5
+// sub.next(5);
 //çıktı 1,2,3,4--2,3,4--5,5
 //*******************************************
 
