@@ -45,6 +45,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./photoapp/photoapp.module').then((m) => m.PhotoappModule),
   },
+  {
+    path: 'mathplay',
+    loadChildren: () =>
+      import('./mathplay/mathplay.module').then((m) => m.MathplayModule),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }, //hiç bir pathle eşleşmiyorsa
 ];
